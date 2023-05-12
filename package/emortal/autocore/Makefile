@@ -24,7 +24,7 @@ define Package/autocore
     +TARGET_bcm27xx:bcm27xx-userland \
     +TARGET_bcm53xx:nvram \
     +(TARGET_mediatek_filogic||TARGET_mvebu):mhz \
-    +TARGET_x86:ethtool \
+    +ethtool \
     +TARGET_x86:lm-sensors
 endef
 
