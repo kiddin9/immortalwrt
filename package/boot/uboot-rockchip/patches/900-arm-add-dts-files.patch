@@ -5,6 +5,8 @@
  	rk3399-gru-bob.dtb \
  	rk3399-gru-kevin.dtb \
 +	rk3399-guangmiao-g4c.dtb \
++	rk3399-h3399pc.dtb \
++	rk3399-mpc1903.dtb \
  	rk3399-khadas-edge.dtb \
  	rk3399-khadas-edge-captain.dtb \
  	rk3399-khadas-edge-v.dtb \
