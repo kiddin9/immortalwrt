@@ -141,6 +141,13 @@ define U-Boot/rockpro64-rk3399
     pine64_rockpro64
 endef
 
+define U-Boot/sharevdi-h3399pc-rk3399
+  $(U-Boot/Default/rk3399)
+  NAME:=SHAREVDI H3399PC
+  BUILD_DEVICES:= \
+    sharevdi_h3399pc
+endef
+
 
 # RK3566 boards
 
