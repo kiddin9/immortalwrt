@@ -280,6 +280,16 @@ define Device/radxa_rock-pi-e
 endef
 TARGET_DEVICES += radxa_rock-pi-e
 
+define Device/sharevdi_h3399pc
+  DEVICE_VENDOR := SHAREVDI
+  DEVICE_MODEL := H3399PC
+  SOC := rk3399
+  UBOOT_DEVICE_NAME := sharevdi-h3399pc-rk3399
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script nanopi-r4s | pine64-bin | gzip | append-metadata
+  DEVICE_PACKAGES := kmod-r8169 -urngd
+endef
+TARGET_DEVICES += sharevdi_h3399pc
+
 define Device/xunlong_orangepi-5
   DEVICE_VENDOR := Xunlong
   DEVICE_MODEL := Orange Pi 5
