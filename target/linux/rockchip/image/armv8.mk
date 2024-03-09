@@ -280,6 +280,37 @@ define Device/radxa_rock-pi-e
 endef
 TARGET_DEVICES += radxa_rock-pi-e
 
+define Device/rongpin_king3399
+  DEVICE_VENDOR := Rongpin
+  DEVICE_MODEL := King3399
+  SOC := rk3399
+  UBOOT_DEVICE_NAME := rongpin-king3399-rk3399
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script nanopi-r4s | pine64-bin | gzip | append-metadata
+  DEVICE_PACKAGES := kmod-r8169 -urngd kmod-brcmfmac cypress-firmware-4356-sdio rongpin-king3399-firmware wpad-openssl
+endef
+TARGET_DEVICES += rongpin_king3399
+ 
+define Device/rocktech_mpc1903
+  DEVICE_VENDOR := Rocktech
+  DEVICE_MODEL := MPC1903
+  SOC := rk3399
+  SUPPORTED_DEVICES := rocktech,mpc1903
+  UBOOT_DEVICE_NAME := rocktech-mpc1903-rk3399
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-bin | gzip | append-metadata
+  DEVICE_PACKAGES := kmod-usb-net-smsc75xx kmod-usb-serial-cp210x -urngd
+endef
+TARGET_DEVICES += rocktech_mpc1903
+
+define Device/sharevdi_h3399pc
+  DEVICE_VENDOR := SHAREVDI
+  DEVICE_MODEL := H3399PC
+  SOC := rk3399
+  UBOOT_DEVICE_NAME := sharevdi-h3399pc-rk3399
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script nanopi-r4s | pine64-bin | gzip | append-metadata
+  DEVICE_PACKAGES := kmod-r8169 -urngd
+endef
+TARGET_DEVICES += sharevdi_h3399pc
+
 define Device/xunlong_orangepi-5
   DEVICE_VENDOR := Xunlong
   DEVICE_MODEL := Orange Pi 5
