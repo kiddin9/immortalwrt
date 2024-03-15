@@ -8,7 +8,7 @@ rockchip_setup_interfaces()
 
 	case "$board" in
 	ariaboard,photonicat|\
-	ezpro,mrkaio-m68s|\
+	ezpro,mrkaio-m68s*|\
 	firefly,rk3568-roc-pc|\
 	friendlyarm,nanopi-r2c|\
 	friendlyarm,nanopi-r2c-plus|\
@@ -54,7 +54,7 @@ rockchip_setup_macs()
 	local label_mac=""
 
 	case "$board" in
-	ezpro,mrkaio-m68s|\
+	ezpro,mrkaio-m68s*|\
 	friendlyarm,nanopc-t6|\
 	friendlyarm,nanopi-r2c|\
 	friendlyarm,nanopi-r2s|\
