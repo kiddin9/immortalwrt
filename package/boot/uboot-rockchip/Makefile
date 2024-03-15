@@ -186,7 +186,8 @@ define U-Boot/mrkaio-m68s-rk3568
   $(U-Boot/Default/rk3568)
   NAME:=Mrkaio M68S
   BUILD_DEVICES:= \
-    ezpro_mrkaio-m68s
+    ezpro_mrkaio-m68s \
+    ezpro_mrkaio-m68s-plus
 endef
 
 define U-Boot/nanopi-r5c-rk3568
