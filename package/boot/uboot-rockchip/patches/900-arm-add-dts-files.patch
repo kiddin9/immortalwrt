@@ -1,16 +1,23 @@
 --- a/arch/arm/dts/Makefile
 +++ b/arch/arm/dts/Makefile
-@@ -96,6 +96,18 @@ dtb-$(CONFIG_ROCKCHIP_RK3368) += \
+@@ -96,6 +96,25 @@ dtb-$(CONFIG_ROCKCHIP_RK3368) += \
  	rk3368-geekbox.dtb \
  	rk3368-px5-evb.dtb \
  
 +dtb-$(CONFIG_ROCKCHIP_RK3399) += \
 +	rk3399-guangmiao-g4c.dtb \
-+	rk3399-nanopi-r4se.dtb
++	rk3399-nanopi-r4se.dtb \
++	rk3399-h3399pc.dtb \
++	rk3399-mpc1903.dtb
 +
 +dtb-$(CONFIG_ROCKCHIP_RK3568) += \
 +	rk3568-mrkaio-m68s.dtb \
-+	rk3568-photonicat.dtb
++	rk3568-photonicat.dtb \
++	rk3568-opc-h66k.dtb \
++	rk3568-opc-h68k.dtb \
++	rk3568-opc-h69k.dtb \
++	rk3568-lyt-t68m.dtb \
++	rk3568-xgp.dtb
 +
 +dtb-$(CONFIG_ROCKCHIP_RK3588) += \
 +	rk3588s-nanopi-r6c.dtb \
