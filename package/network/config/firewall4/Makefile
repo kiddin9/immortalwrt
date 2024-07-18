@@ -25,7 +25,8 @@ define Package/firewall4
 	+kmod-nft-core +kmod-nft-fib +kmod-nft-offload \
 	+kmod-nft-nat +kmod-nft-fullcone \
 	+nftables-json \
-	+ucode +ucode-mod-fs +ucode-mod-ubus +ucode-mod-uci
+	+ucode +ucode-mod-fs +ucode-mod-ubus +ucode-mod-uci \
+	+iptables +ip6tables +miniupnpd-nftables +kmod-nft-socket +kmod-nft-tproxy
   EXTRA_DEPENDS:=ucode (>=2022.03.22)
   PROVIDES:=uci-firewall
 endef
