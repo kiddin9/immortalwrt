@@ -32,9 +32,9 @@ define Package/firewall
   TITLE:=OpenWrt C Firewall
   DEPENDS:=+libubox +libubus +libuci +libip4tc +IPV6:libip6tc +libiptext +IPV6:libiptext6 \
 	+libxtables +kmod-ipt-core +kmod-ipt-conntrack +IPV6:kmod-nf-conntrack6 +kmod-ipt-nat \
-	+iptables-mod-fullconenat
+	+iptables-mod-fullconenat +ip6tables-mod-fullconenat +iptables-legacy +ip6tables-legacy +kmod-ipt-nat6 +kmod-ipt-offload \
+	+ipset +iptables-mod-conntrack-extra +iptables-mod-iprange +iptables-mod-socket +iptables-mod-tproxy
   PROVIDES:=uci-firewall
-  CONFLICTS:=firewall4
 endef
 
 define Package/firewall/description
@@ -59,6 +59,7 @@ define Package/firewall/install
 	$(INSTALL_CONF) ./files/firewall.config $(1)/etc/config/firewall
 	$(INSTALL_DIR) $(1)/etc/
 	$(INSTALL_CONF) ./files/firewall.user $(1)/etc/firewall.user
+	$(INSTALL_CONF) ./files/firewall.exwan $(1)/etc/firewall.exwan
 	$(INSTALL_DIR) $(1)/usr/share/fw3
 	$(INSTALL_CONF) $(PKG_BUILD_DIR)/helpers.conf $(1)/usr/share/fw3
 endef
