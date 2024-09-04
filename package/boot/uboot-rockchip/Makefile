@@ -208,6 +208,34 @@ define U-Boot/rk3568/Default
   TPL:=$(RK3568_TPL)
 endef
 
+define U-Boot/panther-x2-rk3566
+  $(U-Boot/rk3566/Default)
+  NAME:=Panther X2
+  BUILD_DEVICES:= \
+    panther_x2
+endef
+
+define U-Boot/lyt-t68m-rk3568
+  $(U-Boot/rk3568/Default)
+  NAME:=LYT T68M
+  BUILD_DEVICES:= \
+    lyt_t68m
+endef
+
+define U-Boot/nlnet-xgp-rk3568
+  $(U-Boot/rk3568/Default)
+  NAME:=NLnet XGP Board
+  BUILD_DEVICES:= \
+    nlnet_xgp
+endef
+
+define U-Boot/seewo-sv21-rk3568
+  $(U-Boot/rk3568/Default)
+  NAME:=Seewo sv21-rk3568
+  BUILD_DEVICES:= \
+    seewo_sv21-rk3568
+ endef
+
 define U-Boot/bpi-r2-pro-rk3568
   $(U-Boot/rk3568/Default)
   NAME:=Bananapi-R2 Pro
@@ -402,6 +430,10 @@ UBOOT_TARGETS := \
   nanopi-r6c-rk3588s \
   nanopi-r6s-rk3588s \
   orangepi-5-rk3588s \
+  panther-x2-rk3566 \
+  lyt-t68m-rk3568 \
+  nlnet-xgp-rk3568 \
+  seewo-sv21-rk3568 \
   rock5a-rk3588s
 
 UBOOT_CONFIGURE_VARS += USE_PRIVATE_LIBGCC=yes
