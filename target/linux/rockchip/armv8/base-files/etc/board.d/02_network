@@ -28,8 +28,12 @@ rockchip_setup_interfaces()
 	lunzn,fastrhino-r66s|\
 	radxa,e25|\
 	radxa,rock-3b|\
+	seewo,sv21-rk3568|\
 	xunlong,orangepi-5-plus)
 		ucidef_set_interfaces_lan_wan 'eth0' 'eth1'
+		;;
+	lyt,t68m)
+		ucidef_set_interfaces_lan_wan 'lan2 lan3 lan4' 'lan1'
 		;;
 	friendlyarm,nanopc-t6)
 		ucidef_set_interfaces_lan_wan 'eth1' 'eth2'
