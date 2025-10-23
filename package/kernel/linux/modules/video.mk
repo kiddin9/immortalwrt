@@ -129,7 +129,7 @@ define KernelPackage/fb
 	CONFIG_VT_HW_CONSOLE_BINDING=y
   FILES:=$(LINUX_DIR)/drivers/video/fbdev/core/fb.ko \
 	$(LINUX_DIR)/lib/fonts/font.ko \
-	$(LINUX_DIR)/drivers/video/fbdev/core/fb_io_fops.ko
+	$(LINUX_DIR)/drivers/video/fbdev/core/fb_io_fops.ko@eq6.6
   AUTOLOAD:=$(call AutoLoad,06,fb font)
 endef
 
@@ -477,7 +477,7 @@ define KernelPackage/drm-amdgpu
 	CONFIG_DEBUG_KERNEL_DC=n
   FILES:=$(LINUX_DIR)/drivers/gpu/drm/amd/amdgpu/amdgpu.ko \
 	$(LINUX_DIR)/drivers/gpu/drm/scheduler/gpu-sched.ko \
-	$(LINUX_DIR)/drivers/gpu/drm/amd/amdxcp/amdxcp.ko
+	$(LINUX_DIR)/drivers/gpu/drm/amd/amdxcp/amdxcp.ko@ge6.5
   AUTOLOAD:=$(call AutoProbe,amdgpu)
 endef
 
@@ -810,10 +810,10 @@ $(eval $(call KernelPackage,video-pwc))
 define KernelPackage/video-uvc
   TITLE:=USB Video Class (UVC) support
   DEPENDS:=@USB_SUPPORT +kmod-usb-core +kmod-video-videobuf2 +kmod-input-core
-  KCONFIG:= CONFIG_USB_VIDEO_CLASS CONFIG_UVC_COMMON
+  KCONFIG:= CONFIG_USB_VIDEO_CLASS CONFIG_UVC_COMMON@ge6.3
   FILES:=$(LINUX_DIR)/drivers/media/$(V4L2_USB_DIR)/uvc/uvcvideo.ko \
-	$(LINUX_DIR)/drivers/media/common/uvc.ko
-  AUTOLOAD:=$(call AutoProbe,uvc uvcvideo)
+	$(LINUX_DIR)/drivers/media/common/uvc.ko@ge6.3
+  AUTOLOAD:=$(call AutoProbe,uvc@ge6.3 uvcvideo)
   $(call AddDepends/camera)
 endef
 
