@@ -298,6 +298,20 @@ endef
 
 $(eval $(call KernelPackage,multimedia-input))
 
+define KernelPackage/cec-core
+  SUBMENU:=$(VIDEO_MENU)
+  TITLE:=CEC framework
+  HIDDEN:=1
+  KCONFIG:=CONFIG_CEC_CORE
+  FILES:=$(LINUX_DIR)/drivers/media/cec/core/cec.ko
+  AUTOLOAD:=$(call AutoProbe,cec)
+endef
+
+define KernelPackage/cec-core/description
+  CEC framework.
+endef
+
+$(eval $(call KernelPackage,cec-core))
 
 define KernelPackage/drm
   SUBMENU:=$(VIDEO_MENU)
